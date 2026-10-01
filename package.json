@@ -1,0 +1,28 @@
+{
+  "name": "nosh-dish-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dish management dashboard with local drafts and optimistic concurrency control",
+  "scripts": {
+    "dev": "node dev.js",
+    "dev:server": "node backend/server.js",
+    "build": "vite build --config frontend/vite.config.mjs frontend",
+    "start": "npm run build && node backend/server.js",
+    "seed": "node backend/seed.js",
+    "format": "prettier --write 'frontend/**/*.{js,jsx,css,mjs,html}' 'backend/**/*.js' dev.js package.json README.md",
+    "format:check": "prettier --check 'frontend/**/*.{js,jsx,css,mjs,html}' 'backend/**/*.js' dev.js package.json README.md"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.1"
+  }
+}

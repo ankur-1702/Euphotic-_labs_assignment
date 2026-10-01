@@ -1,0 +1,5 @@
+backend/data/dishes.json
+*.tmp
+.DS_Store
+node_modules/
+dist/
