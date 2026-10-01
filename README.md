@@ -36,11 +36,7 @@ Set `PORT` to use a different backend port, for example `PORT=4000 npm start`. D
 
 `PATCH /api/dishes/:dishId` accepts a complete editable snapshot and the version originally loaded by the client:
 
-```sh
-curl -i -X PATCH http://localhost:3000/api/dishes/1 \
-  -H 'Content-Type: application/json' \
-  -d '{"dishName":"Jeera Rice","isPublished":true,"expectedVersion":1}'
-```
+
 
 Successful saves return the saved dish with its incremented version. Invalid payloads and published dishes with a blank name or invalid image URL receive `400`; unknown IDs receive `404`; stale versions receive `409` with the current dish. Version comparison and file replacement run in a serialized critical section, so simultaneous requests cannot both save against the same version. Writes use a temporary file and atomic rename, and JSON storage survives server restarts.
 
